@@ -1,0 +1,13 @@
+--- 
+- hosts: all
+  become: true
+
+  tasks:
+    - name: remove httpd
+      action: yum name=httpd state=absent
+      notify: stop httpd service
+
+  handlers:
+
+    - name: stop httpd service
+      action: yum  name=httpd state=stopped

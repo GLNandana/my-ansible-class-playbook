@@ -1,0 +1,12 @@
+--- # my  apache2 & httpd playbook
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Install apache2 for debian
+      command: apt-get install apache2 -y
+      when: ansible_os_family == "Debian"
+
+    - name: install httpd for redhat
+      command: yum install httpd -y
+      when: ansible_os_family == "RedHat"

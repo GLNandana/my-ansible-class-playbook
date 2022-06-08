@@ -1,0 +1,14 @@
+--- # vars playbook
+- hosts: all
+  become: true
+  user: ansible
+  connection: ssh
+
+  vars:
+    pkgname: docker
+
+  tasks:
+    - name: install docker on hosts
+      yum:
+        name: '{{pkgname}}'
+        state: installed 

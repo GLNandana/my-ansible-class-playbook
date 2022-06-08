@@ -1,0 +1,12 @@
+---
+- name: This is test playbook
+  hosts: all
+  become: yes
+  user: ansible
+  connection: ssh
+
+  tasks:
+    - name: install ture S/W on Hosts
+      yum:
+        name: tree
+        state: present

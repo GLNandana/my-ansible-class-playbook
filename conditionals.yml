@@ -1,0 +1,13 @@
+--- # insatall apache2 & httpd
+- hosts: all
+  become: true
+
+  tasks:
+    - name: install apache2 for Debian
+      command: apt-get install apache2 -y
+      when: ansible_os_family == "Debian"
+
+    - name: install httpd for redhat
+      command: yum install httpd -y
+      when: ansible_os_family=="RedHat"
+

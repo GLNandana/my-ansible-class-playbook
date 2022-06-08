@@ -1,0 +1,10 @@
+--- # my dir playbook
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: creat dir in hosts
+      file:
+        path: /home/ansible/testdir1
+        state: directory
+

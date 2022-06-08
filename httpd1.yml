@@ -1,0 +1,15 @@
+--- # my httpd error playbook
+- hosts: all
+  become: true
+  connection: ssh
+  user: ansible
+
+  tasks:
+    - name: install httpd on hosts
+      yum:
+        name: htt
+        state: latst
+       
+         
+  ignore_errors: yes
+

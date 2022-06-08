@@ -1,0 +1,8 @@
+---
+- hosts: all
+
+  tasks:
+    - name: install docker on hosts
+      yum:
+        name: docker
+        state: installed

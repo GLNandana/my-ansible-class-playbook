@@ -1,0 +1,15 @@
+--- # remove httpd ans stop service
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Remove httpd
+      yum:
+        name: httpd
+        state: absent
+
+    - name: stop httpd
+      service:
+        name: httpd
+        state: stopped
+

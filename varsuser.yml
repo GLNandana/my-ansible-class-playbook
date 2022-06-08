@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+
+  vars:
+    user: nandana
+
+  tasks:
+    - name: creat user using vars
+      user:
+        name: '{{user}}'

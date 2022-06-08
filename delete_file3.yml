@@ -1,0 +1,8 @@
+---
+- hosts: all
+
+  tasks:
+    - name: remove nagafile from hosts
+      file:
+        path: nagafile
+        state: absent

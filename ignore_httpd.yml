@@ -1,0 +1,11 @@
+--- 
+- hosts: all
+  become: true
+
+  tasks:
+    - name: install httpd
+      action: yum name=http state=latest
+  
+  ignore_errors: yes
+
+  

@@ -1,0 +1,9 @@
+--- 
+- hosts: all
+  become: true
+
+  tasks:
+    - name: creat file on Hosts
+      file:
+        path: /home/ansible/testfile
+        state: touch

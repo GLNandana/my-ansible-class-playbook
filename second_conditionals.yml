@@ -1,0 +1,13 @@
+--- # My conditionals play book
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Install apache2 for Debian
+      command: apt-get install apache2 -y
+      when: ansible_os_family == "Debian"
+
+    - name: install tree for Redhat
+      command: yum install tree -y
+      when: ansible_os_family == "RedHat"
+

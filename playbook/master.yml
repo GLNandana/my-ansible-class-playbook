@@ -1,0 +1,6 @@
+--- #  my roles playbook using main.yml section
+- hosts: all
+  become: true
+
+  roles:
+    - testrole
